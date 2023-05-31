@@ -25,11 +25,12 @@ function generateMove(board, playerTurnID) {
   // Duplicar el tablero para no modificar el estado original
   const boardCopy = [...board.map((row) => [...row])];
 
-  // Obtener el índice de la columna con el mejor movimiento
+  // Obtener el índice de la columna con el mejor movimiento defensivo
   const columnIndex = minimax(boardCopy, maxDepth, alpha, beta, true, playerTurnID).columnIndex;
 
   return columnIndex;
 }
+
 
 // Función de evaluación heurística para evaluar el estado del tablero
 function evaluateBoard(board, playerTurnID) {
